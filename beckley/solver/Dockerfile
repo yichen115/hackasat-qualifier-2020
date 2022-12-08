@@ -1,7 +1,6 @@
 FROM ubuntu:18.04
 #Install Apache, Python, Curl. Enable CGI. Install PIP, use PIP to install skyfield
-RUN sed -i s@/archive.ubuntu.com/@/mirrors.aliyun.com/@g /etc/apt/sources.list; \
-    apt-get update -y; \
+RUN apt-get update -y; \
     apt-get install -y python curl python-dev git libssl-dev libffi-dev build-essential; \
     curl https://bootstrap.pypa.io/pip/2.7/get-pip.py -o get-pip.py; \
     python get-pip.py; \
