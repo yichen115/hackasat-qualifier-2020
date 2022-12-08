@@ -1,6 +1,7 @@
 FROM ubuntu:16.04
 #Install Apache, Python, Curl. Enable CGI. Install PIP, use PIP to install skyfield
-RUN apt-get update -y; \
+RUN sed -i s@/archive.ubuntu.com/@/mirrors.aliyun.com/@g /etc/apt/sources.list; \
+    apt-get update -y; \
     apt-get install -y apache2 python curl; \
     a2enmod cgi; \
     curl https://bootstrap.pypa.io/pip/2.7/get-pip.py -o get-pip.py; \
