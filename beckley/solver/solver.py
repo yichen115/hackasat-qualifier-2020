@@ -94,7 +94,9 @@ REDACT
     looklng=-77.03
     lookrng=430000 #not exact just needs to be larger than ~250000 meters
     lookhed=str(az)
+    print("lookhed: "+lookhed)
     looktlt=str(alt)
+    print("looktlt: "+looktlt)
     
     #FIX Docker HOSTS FILE FOR TESTING
     os.system('echo \'172.17.0.1    test.com\' >> /etc/hosts')

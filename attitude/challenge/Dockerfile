@@ -1,7 +1,8 @@
 FROM python:3.7-slim AS python_env
 
 WORKDIR /src
-RUN apt update ;\
+RUN sed -i s@/deb.debian.org/@/mirrors.aliyun.com/@g /etc/apt/sources.list ;\
+    apt update ;\
     apt install -y --no-install-recommends python3-virtualenv python-dev build-essential
     
 ENV VIRTUAL_ENV="/opt/venv"
