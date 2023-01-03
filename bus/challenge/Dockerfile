@@ -1,7 +1,8 @@
 FROM ubuntu:18.04 AS builder
 
 WORKDIR /build
-RUN apt update   ;\
+RUN sed -i s@/archive.ubuntu.com/@/mirrors.aliyun.com/@g /etc/apt/sources.list; \
+    apt-get update -y; \
     apt install -y g++ make 
 
 COPY Makefile /build/
