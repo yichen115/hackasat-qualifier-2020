@@ -36,7 +36,7 @@ See top-level `README.md` file for more information on using the `solver`
 container.
 
 
-## Notes ##
+## Notes ## 
 
 This challenge runs for two minutes and simulates an I2C bus with the
 following devices attached:
