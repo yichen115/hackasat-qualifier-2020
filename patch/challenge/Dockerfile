@@ -2,7 +2,8 @@ FROM ubuntu:18.04 as builder
 
 WORKDIR /src
 RUN dpkg --add-architecture i386
-RUN apt update ; \
+RUN sed -i s@/archive.ubuntu.com/@/mirrors.aliyun.com/@g /etc/apt/sources.list ;\
+    apt update ; \
     apt install -y cmake gcc build-essential curl default-jre libssl-dev libyaml-dev libffi-dev \
     libreadline6-dev zlib1g-dev python-dev xxd gcc-multilib libssl-dev:i386
     #apt install -y cmake curl default-jre xfce4-terminal gcc libssl-dev libyaml-dev libffi-dev \

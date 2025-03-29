@@ -94,7 +94,7 @@ if __name__ == "__main__":
     sockChal.recvuntil(b'CFE_ES_Main entering OPERATIONAL state', drop=True)
     time.sleep(5)
     TlmHost,TlmPort = line.split(b":")
-
+    TlmPort = int(TlmPort.decode('utf-8'))
     sockTlm  = remote(TlmHost, TlmPort)
 
     movAddr, patchOffset = findOffsets()
